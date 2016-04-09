@@ -4,7 +4,7 @@ O objetivo do trabalho é implementar, usando a biblioteca MPI, uma versão para
 
 O mestre ficará responsável pela gerência do saco de trabalho (uma matriz), distribuindo os vetores para os escravos e recebendo de volta os vetores ordenados e guardando-os novamente no saco (a recepção deve ser por ordem de chegada, ou seja, de quem ficar pronto primeiro). A ordem original dos vetores no saco deve ser mantida. Os escravos por sua vez, receberão os vetores a serem ordenados, realizarão a ordenação com o algoritmo fornecido e retornarão o vetor ordenada para o mestre. A iniciativa deve ser dos escravos, ou seja, o s escravos pedem trabalho ao mestre que vai atendendo estas demandas até que o saco esteja vazio. Neste momento são enviadas mensagens de suicídio aos escravos. O programa SPMD deve funcionar para qualquer numero de escravos para permitir uma análise da curva do Speed-UP e Eficiência.
 
-![alt text](https://github.com/djornada/crispy-fiesta/public/diagram.gif "Figura 1")
+![alt text](https://github.com/djornada/crispy-fiesta/blob/master/public/diagram.gif "Figura 1")
 
 Figura 1: Funcionamento do modelo mestre escravo na ordenação de vários vetores (saco de trabalho)
 
