@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROWS 8
+#define ROWS 16
 #define COLUMNS 20
+#define MIN(a,b) (((a)<(b))?(a):(b))
 
 int matrix[ROWS][COLUMNS];
 
@@ -36,22 +37,30 @@ int main(int argc, char *argv[])
 	int my_rank;
 	int proc_n;
 	MPI_Status status;
+	int max_workers;
+	int to_work = 0;
 
 	MPI_Init(&argc, &argv);
 	MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &proc_n);
 	if (my_rank == 0) {
 		populate_matrix();
-		for (i = 1; i < proc_n; ++i) {
-			MPI_Send(matrix[i], COLUMNS,
-					MPI_INT, i,1,
-					MPI_COMM_WORLD);
-		}
-		for (i = 1; i < proc_n; ++i) {
-			MPI_Recv(matrix[i], COLUMNS,
-					MPI_INT, i, 1,
-					MPI_COMM_WORLD, &status);
-			print_array(matrix[i]);
+
+		while(has_work) {
+			max_workers = MIN(ROWS - to_work, proc_n);
+			for (i = 1; i < max_workers; ++i) {
+				MPI_Send(matrix[to_work], COLUMNS,
+						 MPI_INT, i, 1,
+						 MPI_COMM_WORLD);
+			}
+			for (i = 1; i < max_workers; ++i) {
+				MPI_Recv(matrix[i], COLUMNS,
+						 MPI_INT, i, 1,
+						 MPI_COMM_WORLD, &status);
+				printf("i: %d -> ", i);
+				print_array(matrix[i]);
+			}
+			has_work = to_work < ROWS;
 		}
 	}
 	else {
