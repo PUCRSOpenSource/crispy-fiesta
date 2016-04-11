@@ -43,20 +43,27 @@ int main(int argc, char *argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &proc_n);
 
     if (my_rank == 0) {
+        int work_sent = ROWS;
+        int work_received = ROWS;
         populate_matrix();
-        // Send messages.
-        for (i = 1; i < proc_n; ++i) {
-            MPI_Send(matrix[i], COLUMNS,
-                     MPI_INT, i, WORK_TAG,
-                     MPI_COMM_WORLD);
-        }
-        // Get answers.
-        for (i = 1; i < proc_n; ++i) {
-            MPI_Recv(matrix[i], COLUMNS,
-                     MPI_INT, i, WORK_TAG,
-                     MPI_COMM_WORLD, &status);
-            print_array(matrix[i]);
 
+        while(work_received > 0) {
+            // Send messages.
+            for (i = 1; i < proc_n && work_sent > 0; ++i) {
+                MPI_Send(matrix[i], COLUMNS,
+                         MPI_INT, i, WORK_TAG,
+                         MPI_COMM_WORLD);
+                work_sent--;
+            }
+            // Get answers.
+            for (i = 1; i < proc_n && work_received > 0; ++i) {
+                MPI_Recv(matrix[i], COLUMNS,
+                         MPI_INT, i, WORK_TAG,
+                         MPI_COMM_WORLD, &status);
+                printf("Process number: %d -> ", i);
+                print_array(matrix[i]);
+                work_received--;
+            }
         }
         // Send kill signal.
         for (i = 1; i < proc_n; ++i) {
