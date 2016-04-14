@@ -7,31 +7,28 @@
 int matrix[ROWS][COLUMNS];
 
 int compare(const void *a, const void *b) {
-    return (*(int *) a - *(int *) b);
+	return (*(int *) a - *(int *) b);
 }
 
 void populate_matrix() {
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
-            matrix[i][j] = COLUMNS - j;
-        }
-    }
+	int i,j;
+	for (i = 0; i < ROWS; i++) {
+		for (j = 0; j < COLUMNS; j++) {
+			matrix[i][j] = COLUMNS - j;
+		}
+	}
 }
 
 void sort_matrix() {
-    for (int i = 0; i < ROWS; i++) {
-        qsort(matrix[i], COLUMNS, sizeof(int), compare);
-    }
+	int i;
+	for (i = 0; i < ROWS; i++) {
+		qsort(matrix[i], COLUMNS, sizeof(int), compare);
+	}
 }
 
 int main() {
-    populate_matrix();
-//    sort_matrix();
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
-            printf("%d\n", matrix[i][j]);
-        }
-    }
-    return 0;
+	populate_matrix();
+	sort_matrix();
+	return 0;
 }
 
