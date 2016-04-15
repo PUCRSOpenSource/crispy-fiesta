@@ -10,14 +10,14 @@
 
 \title{Estudo da implementação paralela do quicksort no modelo mestre escravo}
 
-\numberofauthors{2} 
+\numberofauthors{2}
 \author{
 \alignauthor
 Diego Pinto da Jornada\\
        \email{pp12804}
 \alignauthor
 Daniel Amarante\\
-       \email{daniel.amarante@acad.pucrs.br}
+       \email{pp12802}
 }
 
 \maketitle
@@ -36,41 +36,103 @@ Daniel Amarante\\
 
 \section{Introdução}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	No escopo da disciplina de \emph{Programação Paralela} o primeiro 
+	trabalho a ser realizado pode ser resumido assim: Analisar o 
+	desempenho do algoritmo \emph{quicksort} para ordernar um dada 
+	quantidade de vetores, a análise é feita sobre a implementação 
+	sequencial e paralela utilizando o modelo mestre escravo.
 
 %TCitation of Einstein paper~\cite{Einstein}.
 
 \section{Análise de Resultados}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Modelo da Solução}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Avaliação do Desempenho}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Análise dos Resultado}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Dificuldades Encontradas}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+	eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+	enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+	nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+	nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+	sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 %\bibliographystyle{abbrv}
