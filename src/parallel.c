@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROWS 16
-#define COLUMNS 20
+#define ROWS 1000
+#define COLUMNS 100000
 #define MIN(a,b) (((a)<(b))?(a):(b))
 
 #define WORK_TAG 1
@@ -12,8 +12,7 @@
 int matrix[ROWS][COLUMNS];
 
 void populate_matrix() {
-    int i;
-    int j;
+    int i,j;
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLUMNS; j++) {
             matrix[i][j] = COLUMNS - j;
@@ -34,6 +33,8 @@ void print_array(int array[]) {
 }
 
 int main(int argc, char *argv[]) {
+	double t1, t2; 
+	t1 = MPI_Wtime(); 
     int i;
     int my_rank;
     int proc_n;
@@ -51,19 +52,17 @@ int main(int argc, char *argv[]) {
         while(work_received > 0) {
             // Send messages.
             for (i = 1; i < proc_n && work_sent > 0; ++i) {
-                MPI_Send(matrix[i], COLUMNS,
+                MPI_Send(matrix[--work_sent], COLUMNS,
                          MPI_INT, i, WORK_TAG,
                          MPI_COMM_WORLD);
-                work_sent--;
             }
             // Get answers.
             for (i = 1; i < proc_n && work_received > 0; ++i) {
-                MPI_Recv(matrix[i], COLUMNS,
+                MPI_Recv(matrix[--work_received], COLUMNS,
                          MPI_INT, i, WORK_TAG,
                          MPI_COMM_WORLD, &status);
-                printf("Process number: %d -> ", i);
-                print_array(matrix[i]);
-                work_received--;
+				printf("Process number: %d -> ", i);
+				print_array(matrix[i]);
             }
         }
         // Send kill signal.
@@ -87,7 +86,9 @@ int main(int argc, char *argv[]) {
                      MPI_COMM_WORLD);
         }
     }
+	t2 = MPI_Wtime(); 
     MPI_Finalize();
+	printf( "Elapsed time is %f\n", t2 - t1 ); 
     return 0;
 }
 
